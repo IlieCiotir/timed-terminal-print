@@ -1,6 +1,6 @@
 const readline = require('readline');
 
-class TimedConsoleWritter {
+class TimedInputOutput {
     constructor(separator, initialDelay, delay) {
         this.lastOutput = Promise.resolve(1);
         this.separator = separator;
@@ -25,11 +25,22 @@ class TimedConsoleWritter {
         return Promise.all(output);
     }
 
+    question() {
+        return this.lastOutput = this.lastOutput.then(() => {
+            return new Promise((resolve, reject) => {
+                this.rl.question(' ', (answer) => {
+                    resolve(answer);
+                });
+            });
+        });
+    }
+
     write(text) {
-        this.lastOutput = this.lastOutput.then(() => {
+        return this.lastOutput = this.lastOutput.then(() => {
             return this.queueText(text);
         });
     }
 }
 
-module.exports = TimedConsoleWritter;
+module.exports = TimedInputOutput;
+
