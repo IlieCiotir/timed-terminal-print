@@ -1,11 +1,12 @@
 {
   "name": "timed-terminal-print",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "output text in the terminal in a staggered manner",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "dipixelhunter@gmail.com",
-  "license": "ISC"
+  "license": "MIT",
+  "repository": "https://github.com/Toskv/timed-terminal-print"
 }
