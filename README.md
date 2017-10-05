@@ -7,7 +7,7 @@ Install with:
 
 Example:
 
-```javscript
+```javascript
 let writer = new TimedConsoleWritter('',10,10)
 
 writer.write('Some text')
